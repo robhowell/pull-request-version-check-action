@@ -43,7 +43,7 @@ module.exports = async function run() {
         description: isWip
           ? 'This PR is marked with "[WIP]".'
           : 'Ready for review & merge.',
-        context: 'puill-request-version-check-action'
+        context: 'pull-request-version-check-action'
       }
     );
 
