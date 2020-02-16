@@ -36,7 +36,7 @@ const run = async () => {
       }
     );
 
-    if(true || commitsData.length === 1) {
+    if(commitsData.length === 1) {
       console.log('Only one commit found. Creating second commit to fix squash-and-merge commit message issue - see https://github.com/robhowell/pull-request-version-check-action');
 
       const commitUser = commitsData[0].commit.author || commitsData[0].commit.committer;
