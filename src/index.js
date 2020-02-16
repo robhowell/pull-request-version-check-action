@@ -41,7 +41,7 @@ const run = async () => {
 
       const commitUser = commitsData[0].commit.author || commitsData[0].commit.committer;
   
-      console.log(`branch = pullRequestContext.head.ref`);
+      console.log(`branch = ${pullRequestContext.head.ref}`);
 
       await execShell([
         `git config user.email "${commitUser.email}"`,
