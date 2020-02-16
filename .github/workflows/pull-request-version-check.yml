@@ -1,6 +1,8 @@
 name: 'Pull Request Version Check'
 on:
   pull_request:
+    branches-ignore:
+      - 'master' 
     types:
       - opened
       - edited
