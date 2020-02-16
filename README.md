@@ -21,7 +21,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: robhowell/pull-request-version-check-action@v1.0.0
+      - uses: robhowell/pull-request-version-check-action@v2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
