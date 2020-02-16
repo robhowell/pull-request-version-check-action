@@ -1,6 +1,6 @@
 {
   "name": "pull-request-version-check-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Ensure your PR title starts with patch:, minor: or major:",
   "main": "index.js",
   "scripts": {
