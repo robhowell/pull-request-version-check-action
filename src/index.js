@@ -1,8 +1,9 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const validatePrTitle = require('./validatePrTitle');
+const execShell = require('exec-sh').promise;
 
-async function run() {
+const run = async () => {
   try {
     const client = new github.GitHub(process.env.GITHUB_TOKEN);
 
@@ -20,7 +21,7 @@ async function run() {
     // the user updates the title and re-runs the workflow, it would
     // be outdated. Therefore fetch the pull request via the REST API
     // to ensure we use the current title.
-    const {data: pullRequestData} = await client.pulls.get({
+    const { data: pullRequestData } = await client.pulls.get({
       owner,
       repo,
       pull_number: pullRequestContext.number
@@ -36,6 +37,8 @@ async function run() {
     );
 
     console.log(`Commits length = "${commitsData.length}"`);
+
+    await execShell('echo TEST!');
 
     await validatePrTitle(pullRequestData.title);
   } catch (error) {
