@@ -26,30 +26,7 @@ module.exports = async function run() {
       pull_number: contextPullRequest.number
     });
 
-    // Pull requests that start with "[WIP] " are excluded from the check.
-    const isWip = /^\[WIP\]\s/.test(pullRequest.title);
-    const newStatus = isWip ? 'pending' : 'success';
-
-    // When setting the status to "pending", the checks don't complete.
-    // https://developer.github.com/v3/repos/statuses/#create-a-status
-    const response = await client.request(
-      'POST /repos/:owner/:repo/statuses/:sha',
-      {
-        owner,
-        repo,
-        sha: pullRequest.head.sha,
-        state: newStatus,
-        target_url: 'https://github.com/robhowell/pull-request-version-check-action',
-        description: isWip
-          ? 'This PR is marked with "[WIP]".'
-          : 'Ready for review & merge.',
-        context: 'pull-request-version-check-action'
-      }
-    );
-
-    if (!isWip) {
-      await validatePrTitle(pullRequest.title);
-    }
+    await validatePrTitle(pullRequest.title);
   } catch (error) {
     core.setFailed(error.message);
   }

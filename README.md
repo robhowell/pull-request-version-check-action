@@ -32,8 +32,6 @@ Examples for valid PR titles:
 - minor: Add support for Node 12.
 - major: Drop support for Node 8.
 
-Additionally, the special `[WIP]` prefix is supported, to indicate that a pull request is work in progress and isn't ready to be merged. In this case the PR title isn't validated and the pull request checks remain pending.
-
 ## Prior art
 
 - Initial version forked from [amannn/pull-request-version-check-action](https://github.com/amannn/pull-request-version-check-action)
