@@ -16,7 +16,7 @@
       "npmPublish": false
     }],
     ["@semantic-release/git", {
-      "message": "Release ${nextRelease.version}"
+      "message": "Release ${nextRelease.version}\n[skip release]"
     }]
   ]
 }
