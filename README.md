@@ -6,10 +6,16 @@ This is a [Github Action](https://github.com/features/actions) that ensures that
 
 This is helpful when you're using [semantic-release](https://github.com/semantic-release/semantic-release), to support the three prefixes above. When using the "Squash and merge" strategy, Github will suggest to use the PR title as the commit message. With this action you can validate that the PR title will lead to a correct commit message.
 
-## Example
+## How to setup this action
+
+If you haven't used GitHub Actions before, create a file named `pull-request-version-check.yml` at the following path:
+
+- `.github/workflows/pull-request-version-check.yml`
+
+Add the following contents to the file:
 
 ```yml
-name: "Lint PR"
+name: 'Pull Request Version Check'
 on:
   pull_request:
     types:
@@ -18,15 +24,25 @@ on:
       - synchronize
 
 jobs:
-  main:
+  version-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: robhowell/pull-request-version-check-action@v2.0.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Pull Request Version Check
+        uses: robhowell/pull-request-version-check-action@v2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-Examples for valid PR titles:
+## How to configure Semantic Release on your mainline branch
+
+Install `semantic-release` and plugins as `devDependencies` in your project:
+
+- `npm --save-dev semantic-release @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/git @semantic-release/release-notes-generator`
+- Create `release.yml` file based on the [release.yml](.github/workflows/release.yml) file in this repo
+
+## Examples for valid PR titles
 
 - patch: Correct typo.
 - minor: Add support for Node 12.

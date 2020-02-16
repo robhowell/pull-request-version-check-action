@@ -7,7 +7,7 @@ on:
       - synchronize
 
 jobs:
-  pull-request-version-check-action:
+  version-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
