@@ -36,6 +36,6 @@ Additionally, the special `[WIP]` prefix is supported, to indicate that a pull r
 
 ## Prior art
 
-- Initial version forked from [amannn/puill-request-version-check-action](https://github.com/amannn/puill-request-version-check-action)
+- Initial version forked from [amannn/pull-request-version-check-action](https://github.com/amannn/pull-request-version-check-action)
 - Thanks to [zeke/semantic-pull-requests](https://github.com/zeke/semantic-pull-requests) for the idea of defining versions using pull request titles instead of commit messages
 - Thanks to [semantic-release/semantic-release](https://github.com/semantic-release/semantic-release) for the fantastic Semantic Release module!
