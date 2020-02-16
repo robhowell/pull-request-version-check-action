@@ -41,6 +41,8 @@ const run = async () => {
 
       const commitUser = commitsData[0].commit.author || commitsData[0].commit.committer;
   
+      console.log(`repo URL = github.com/${process.env.GITHUB_REPOSITORY}.git`);
+
       await execShell([
         `git config user.email "${commitUser.email}"`,
         `git config user.name "${commitUser.name}"`,
