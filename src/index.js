@@ -26,7 +26,7 @@ async function run() {
       pull_number: pullRequestContext.number
     });
 
-    console.log(`Number of commits = ${!!pullRequest.commits && pullRequest.commits.length}`);
+    console.log(`Number of commits = ${!!pullRequestData.commits && pullRequestData.commits.length}`);
 
     await validatePrTitle(pullRequestData.title);
   } catch (error) {
