@@ -32,10 +32,8 @@ Examples for valid PR titles:
 - minor: Add support for Node 12.
 - major: Drop support for Node 8.
 
-Additionally, the special `[WIP]` prefix is supported, to indicate that a pull request is work in progress and isn't ready to be merged. In this case the PR title isn't validated and the pull request checks remain pending.
-
 ## Prior art
 
-- Initial version forked from [amannn/action-semantic-pull-request](https://github.com/amannn/action-semantic-pull-request)
+- Initial version forked from [amannn/pull-request-version-check-action](https://github.com/amannn/pull-request-version-check-action)
 - Thanks to [zeke/semantic-pull-requests](https://github.com/zeke/semantic-pull-requests) for the idea of defining versions using pull request titles instead of commit messages
 - Thanks to [semantic-release/semantic-release](https://github.com/semantic-release/semantic-release) for the fantastic Semantic Release module!
