@@ -36,9 +36,21 @@ const run = async () => {
       }
     );
 
-    console.log(`Commits length = "${commitsData.length}"`);
+    if(true || commitsData.length === 1) {
+      console.log('Only one commit found. Creating second commit to fix squash-and-merge commit message issue - see https://github.com/robhowell/pull-request-version-check-action');
 
-    await execShell('echo TEST!');
+      const commitUser = commitsData[0].commit.author || commitsData[0].commit.committer;
+  
+      await execShell([
+        `git config user.email "${commitUser.email}"`,
+        `git config user.name "${commitUser.name}"`,
+        `git remote set-url origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git`,
+        `git checkout master`,
+        `git commit -m "Empty commit\n[skip-ci]" --allow-empty`,
+        `git push origin master`
+      ]);
+    }
+
 
     await validatePrTitle(pullRequestData.title);
   } catch (error) {
