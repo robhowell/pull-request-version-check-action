@@ -1,0 +1,9 @@
+name: pull-request-version-check-action
+author: Rob Howell <rob@robhowell.com>
+description: Ensure your PR title starts with "patch:", "minor:" or "major:".
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'target'
+  color: 'red'

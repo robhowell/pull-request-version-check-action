@@ -1,0 +1,40 @@
+{
+  "name": "pull-request-version-check-action",
+  "version": "1.0.0",
+  "description": "Ensure your PR title starts with patch:, minor: or major:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robhowell/pull-request-version-check-action.git"
+  },
+  "keywords": [
+    "github-action",
+    "conventional-commits"
+  ],
+  "author": "Rob Howell <rob@robhowell.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robhowell/pull-request-version-check-action/issues"
+  },
+  "homepage": "https://github.com/robhowell/pull-request-version-check-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^1.1.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "3.0.5",
+    "@semantic-release/commit-analyzer": "6.3.3",
+    "@semantic-release/git": "7.0.18",
+    "@semantic-release/release-notes-generator": "7.3.2",
+    "conventional-changelog-conventionalcommits": "4.2.1",
+    "jest": "24.9.0",
+    "semantic-release": "15.13.30"
+  },
+  "engines": {
+    "node": "^12.0.0"
+  }
+}
