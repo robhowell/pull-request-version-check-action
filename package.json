@@ -23,7 +23,8 @@
   "homepage": "https://github.com/robhowell/pull-request-version-check-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "@actions/github": "^1.1.0"
+    "@actions/github": "^1.1.0",
+    "exec-sh": "^0.3.4"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.5",

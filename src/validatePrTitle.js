@@ -12,7 +12,7 @@ const getPrTypeFromTitle = (prTitle) => {
   return prTitle.split(':')[0];
 }
 
-async function validatePrTitle(prTitle) {
+const validatePrTitle = async (prTitle) => {
   const prType = getPrTypeFromTitle(prTitle);
 
   if (!prType) {
