@@ -46,7 +46,8 @@ const run = async () => {
       await execShell([
         `git config user.email "${commitUser.email}"`,
         `git config user.name "${commitUser.name}"`,
-        `git remote set-url origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git`,
+        `git clone https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git`,
+        `cd ${repo}`,
         `git checkout ${pullRequestContext.head.ref}`,
         `git commit -m "Empty commit\n[skip-ci]" --allow-empty`,
         `git push origin ${pullRequestContext.head.ref}`
