@@ -26,7 +26,16 @@ async function run() {
       pull_number: pullRequestContext.number
     });
 
-    console.log(`Commit URL = "${pullRequestData.commits_url}"`);
+    const { data: commitsData } = await client.request(
+      'GET /repos/:owner/:repo/pulls/:pull_number/commits',
+      {
+        owner,
+        repo,
+        pull_number: pullRequestContext.number
+      }
+    );
+
+    console.log(`Commits length = "${commitsData.length}"`);
 
     await validatePrTitle(pullRequestData.title);
   } catch (error) {
